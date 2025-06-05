@@ -1,0 +1,40 @@
+[gd_scene load_steps=7 format=3 uid="uid://k53qn8wi8l72"]
+
+[ext_resource type="Script" uid="uid://bsx085vare123" path="res://bed.gd" id="1_2rykw"]
+[ext_resource type="Texture2D" uid="uid://q5cafa8b0lbl" path="res://assets/Tilemaps/interactable.png" id="2_gtpq8"]
+[ext_resource type="PackedScene" uid="uid://b7mcuu787tc13" path="res://interaction/interaction_area/InteractionArea.tscn" id="3_tpm37"]
+[ext_resource type="Script" uid="uid://g32um0mltv5d" path="res://addons/dialogue_manager/dialogue_label.gd" id="4_gtpq8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_threo"]
+size = Vector2(161, 160)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_threo"]
+radius = 151.0
+
+[node name="Bed" type="StaticBody2D"]
+collision_layer = 16
+script = ExtResource("1_2rykw")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(559.5, 176)
+scale = Vector2(5.03125, 5)
+texture = ExtResource("2_gtpq8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(559.5, 176)
+shape = SubResource("RectangleShape2D_threo")
+
+[node name="InteractionArea" parent="." instance=ExtResource("3_tpm37")]
+position = Vector2(559, 177)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
+shape = SubResource("CircleShape2D_threo")
+
+[node name="DialogueLabel" type="RichTextLabel" parent="."]
+offset_left = 293.0
+offset_top = 96.0
+offset_right = 825.0
+offset_bottom = 267.0
+script = ExtResource("4_gtpq8")
+skip_pause_at_abbreviations = PackedStringArray("Mr", "Mrs", "Ms", "Dr", "etc", "eg", "ex")
+metadata/_custom_type_script = "uid://g32um0mltv5d"
