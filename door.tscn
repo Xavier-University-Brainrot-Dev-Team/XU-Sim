@@ -1,0 +1,31 @@
+[gd_scene load_steps=6 format=3 uid="uid://btoo0bnr14arw"]
+
+[ext_resource type="Texture2D" uid="uid://q5cafa8b0lbl" path="res://assets/Tilemaps/interactable.png" id="1_0phs7"]
+[ext_resource type="Script" uid="uid://ouhgivbfxd8k" path="res://door.gd" id="2_50cdl"]
+[ext_resource type="PackedScene" uid="uid://b7mcuu787tc13" path="res://interaction/interaction_area/InteractionArea.tscn" id="3_y5njw"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_s2wwn"]
+radius = 50.5964
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s2wwn"]
+size = Vector2(32, 32)
+
+[node name="Door" type="StaticBody2D"]
+collision_layer = 16
+script = ExtResource("2_50cdl")
+
+[node name="InteractionArea" parent="." instance=ExtResource("3_y5njw")]
+position = Vector2(272, 143)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
+position = Vector2(-1, 1)
+shape = SubResource("CircleShape2D_s2wwn")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(256, 128)
+texture = ExtResource("1_0phs7")
+centered = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(272, 144)
+shape = SubResource("RectangleShape2D_s2wwn")

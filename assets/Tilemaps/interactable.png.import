@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://vkuhwvuxxp0l"
-path="res://.godot/imported/placeholders.png-1729bc989e392e457629c0c1b7ba1eb1.ctex"
+uid="uid://q5cafa8b0lbl"
+path="res://.godot/imported/interactable.png-6328fef544fb628c57ac4974f573447c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/placeholders.png"
-dest_files=["res://.godot/imported/placeholders.png-1729bc989e392e457629c0c1b7ba1eb1.ctex"]
+source_file="res://assets/Tilemaps/interactable.png"
+dest_files=["res://.godot/imported/interactable.png-6328fef544fb628c57ac4974f573447c.ctex"]
 
 [params]
 
